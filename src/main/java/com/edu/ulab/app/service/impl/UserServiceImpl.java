@@ -3,7 +3,6 @@ package com.edu.ulab.app.service.impl;
 import com.edu.ulab.app.dto.UserDto;
 import com.edu.ulab.app.exception.NotFoundException;
 import com.edu.ulab.app.mapper.UserMapper;
-import com.edu.ulab.app.model.User;
 import com.edu.ulab.app.repository.UserRepository;
 import com.edu.ulab.app.service.UserService;
 import lombok.AccessLevel;
@@ -29,7 +28,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDto updateUser(UserDto userDto) {
-        User userToUpdate = repository.findById(userDto.getId())
+        var userToUpdate = repository.findById(userDto.getId())
                 .orElseThrow(() -> new NotFoundException("User with id " + userDto.getId() + " not found"));
         userToUpdate.setFullName(userDto.getFullName());
         userToUpdate.setTitle(userDto.getTitle());
