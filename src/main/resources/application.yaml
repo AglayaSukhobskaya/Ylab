@@ -12,3 +12,18 @@ management:
     web:
       exposure:
         include: health,info
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/y_lab_db
+    username: postgres
+    password: postgres
+  jpa:
+    database: postgresql
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create-drop
+
+
+
